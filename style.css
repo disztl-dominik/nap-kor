@@ -56,11 +56,11 @@ body {
     position: relative;
     font-size: 1.2rem;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     background-color: inherit;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 
     p {
         margin: 0;
@@ -83,6 +83,25 @@ body {
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: 500;
+    width: max-content;
+}
+
+.dropdown-submenu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 230px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    top: 0;
+    left: 100%;
+}
+
+.dropdown-submenu-trigger {
+    display: flex;
 }
 
 .dropdown-content a {
@@ -91,9 +110,11 @@ body {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content .dropdown-submenu-trigger:hover {background-color: #ddd;}
+.dropdown-submenu a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+.dropdown-submenu-trigger:hover .dropdown-submenu {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #f1f1f1;}
 
@@ -175,14 +196,28 @@ body {
         bottom: 2px;
     }
 
+    .submenu-arrow {
+        border: solid #522d00;;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(315deg);
+        -webkit-transform: rotate(315deg);
+        transition: transform 0.3s ease;
+        position: relative;
+        bottom: 0px;
+        margin: auto;
+    }
+
     .links {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         width: 100%;
-        padding: 10px;
-        gap: 1.5rem;
+        padding: 20px;
+        gap: 0.8rem;
         color: #522d00;
+        padding-right: 10px;
 
         a {
             position: relative;
@@ -211,6 +246,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1; 
+    background-position-x: left;
 }
 
 .section-priorities {
