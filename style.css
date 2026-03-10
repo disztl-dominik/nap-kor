@@ -51,7 +51,7 @@ body {
 }
 
 .dropbtn {
-    padding: 12px;
+    padding: 10px;
     border: none;
     position: relative;
     font-size: 1.2rem;
@@ -111,6 +111,7 @@ body {
 }
 
 .dropdown-content .dropdown-submenu-trigger:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #ddd;}
 .dropdown-submenu a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
@@ -120,23 +121,25 @@ body {
 
 .hero {
     position: relative;
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
     color: white;
     overflow: hidden;
 
     h1 {
         font-family: 'Lora', serif;
-        font-size: 48px;
+        font-size: 45px;
         color: #b67722;
     }
 
     p {
-        font-size: 20px;
+        font-size: 18px;
         color: #a3753a;
     }
 
     a {
+        display: block;
+        margin-bottom: 1em;
         color: #a3753a;
     }
 }
@@ -167,8 +170,8 @@ body {
     top: 0;
     z-index: 1;
     /*background-image: linear-gradient(to right, #f6b13a , #f47639);*/
-    /*background: linear-gradient(90deg, #e09b3d, #f2b15e);*/
-    background: linear-gradient(90deg, #f69f38, #f69d39);
+    /*background: linear-gradient(90deg, #f69f38, #f69d39);*/
+    /*background: linear-gradient(90deg, #f5a648, #f5aa55);*/
     font-family: 'Source Sans 3', 'sans-serif';
     transition: opacity 0.2s ease;
 
@@ -241,7 +244,8 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("./kepek/napkor011.png");
+    /*background-image: url("./kepek/napkor011.png");*/
+    background-image: url('./kepek/header.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
