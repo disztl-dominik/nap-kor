@@ -15,8 +15,7 @@
         <div class="footer-column">
             <h3>Információ</h3>
             <p><a href="./adatkezelesi-tajekoztato.php">Adatkezelési tájékoztató</a></p>
-            <p><a href="./aszf.php">Hozzájáruló nyilatkozat</a></p>
-            <p><a href="./kapcsolat.php">Társoldalak</a></p>
+            <p><a href="./impresszum.php">Impresszum</a></p>
         </div>
     </div>
     <div class="footer-bottom">

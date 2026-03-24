@@ -2,13 +2,15 @@
     <head>
         <title>Nap-Kör Mentálhigiénés Alapítvány</title>
         <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="./kepek/icon.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-        </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
     <body>
         <?php include './header.php'; ?>
 
@@ -20,6 +22,17 @@
                 <a href="#kapcsolat" class="btn-primary">Kapcsolatfelvétel</a>
             </div>
         </section>
+
+        <div id="accessibility-wrapper">
+            <div id="accessibility-menu" class="sidenav">
+                <button id="decrease-font-size" class="font-size-button" title="Betűméret csökkentése" aria-label="Betűméret csökkentése">A−</button>
+                <button id="increase-font-size" class="font-size-button" title="Betűméret növelése" aria-label="Betűméret növelése">A+</button>
+                <img id="high-contrast" src="kepek/kontraszt.webp" alt="Magas kontrasztos mód">
+                <img id="sidenav-default" src="kepek/default.svg" alt="Akadálymentesítési beállítások visszaállítása">
+            </div>
+
+            <span id="accessibility-toggle" class="open-sidenav" style="position: relative; top: 0; left: 0;" onclick="openNav()"><i class="fa-solid fa-eye-low-vision"></i></span>
+        </div>
 
         <div class="container">
 
@@ -313,6 +326,7 @@
                         </div>
                     </div>
                 </div>
+                <h3 style="text-align: center; font-size: 1.1rem; font-weight: normal;">Budapest Józsefvárosi Önkormányzat 2008 júliusa óta folyamatosan, a VIII. ker. Nap u. 25 sz. alatti helyiség bérbe adásával és jelentős bérleti kedvezmény biztosításával támogatja az Alapítványt.</h3>
             </section>
         </div>
         </div>
@@ -329,4 +343,11 @@
             header.classList.remove('transparent');
         }
     }
+
+    const wrapper = document.getElementById("accessibility-wrapper");
+    const toggle = document.getElementById("accessibility-toggle");
+
+    toggle.addEventListener("click", () => {
+        wrapper.classList.toggle("open");
+    });
 </script>

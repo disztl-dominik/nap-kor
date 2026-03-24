@@ -6,6 +6,11 @@
     --text-dark: #2e2e2e;
     --text-light: #6a6a6a;
     --border-light: #e8dcc7;
+    --base-font-size: 100%;
+}
+
+html {
+    font-size: var(--base-font-size);
 }
 
 p {
@@ -33,14 +38,128 @@ body {
 }
 
 .body-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('./kepek/napkor03.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 1;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('./kepek/napkor03.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: -1;
+}
+
+.high-contrast .font-size-button {
+    background: yellow;
+    color: black;
+}
+
+/*#region accessibility-menu*/
+#accessibility-wrapper {
+    position: fixed;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: flex-start;
+    transition: left 0.3s ease;
+    z-index: 1000;
+
+    #accessibility-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        height: auto;
+        width: 50px;
+        z-index: 1;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+        text-align: center;
+        border: 1px solid grey;
+        background: #333;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-bottom-right-radius: 8px;
+
+        a:hover{
+            color: gray;
+        }
+
+        .font-size-button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            background: #4a4a4a;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+
+            &:hover {
+                background: #2c2c2c;
+            }
+        }
+
+        #high-contrast {
+            height: 33px;
+            cursor: pointer;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        #sidenav-default {
+            height: 33px;
+            cursor: pointer;
+        }
+
+        .closebtn {
+            position: relative;
+            top: 0;
+            font-size: 30px;
+            text-decoration: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #accessibility-toggle {
+        width: 50px;
+        height: 50px;
+        background: white;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 0 8px 8px 0;
+    }
+
+    #accessibility-toggle:hover {
+        color: gray;
+    }
+}
+
+#accessibility-wrapper.open {
+    left: -1px;
+}
+/*#endregion*/
+
+.high-contrast {
+    --bg: black;
+    --fg: yellow;
+    --bg-image: none;
+}
+
+.high-contrast,
+.high-contrast * {
+    color: #ff0 !important;
+    background: #000 none !important;
 }
 
 .container {
@@ -49,75 +168,6 @@ body {
     margin: auto;
     background: white;
 }
-
-.dropbtn {
-    padding: 10px;
-    border: none;
-    position: relative;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: 600;
-    background-color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    p {
-        margin: 0;
-    }
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 230px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: 500;
-    width: max-content;
-}
-
-.dropdown-submenu {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 230px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: 500;
-    top: 0;
-    left: 100%;
-}
-
-.dropdown-submenu-trigger {
-    display: flex;
-}
-
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content .dropdown-submenu-trigger:hover {background-color: #ddd;}
-.dropdown-content a:hover {background-color: #ddd;}
-.dropdown-submenu a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown-submenu-trigger:hover .dropdown-submenu {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #f1f1f1;}
 
 .hero {
     position: relative;
@@ -139,7 +189,9 @@ body {
 
     a {
         display: block;
-        margin-bottom: 1em;
+        margin: auto;
+        margin-bottom: 1rem;
+        width: fit-content;
         color: #a3753a;
     }
 }
@@ -218,7 +270,7 @@ body {
         align-items: center;
         width: 100%;
         padding: 20px;
-        gap: 0.8rem;
+        gap: 0rem;
         color: #522d00;
         padding-right: 10px;
 
@@ -234,6 +286,75 @@ body {
             }
         }
     }
+
+    .dropbtn {
+        padding: 10px;
+        border: none;
+        position: relative;
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: 600;
+        background-color: inherit;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 230px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: 500;
+        width: max-content;
+
+        a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+    }
+
+    .dropdown-submenu {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 240px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: 500;
+        top: auto;
+        left: 100%;
+    }
+
+    .dropdown-submenu-trigger {
+        display: flex;
+    }
+
+    .dropdown-content .dropdown-submenu-trigger:hover {background-color: #ddd;}
+    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown-submenu a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown-submenu-trigger:hover .dropdown-submenu {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #f1f1f1;}
 }
 
 #header:hover {
@@ -244,8 +365,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    /*background-image: url("./kepek/napkor011.png");*/
-    background-image: url('./kepek/header.png');
+    background-image: url('./kepek/7.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

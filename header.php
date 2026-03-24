@@ -7,8 +7,8 @@
                 <i class="arrow"></i>
             </div>
             <div class="dropdown-content">
+                <a href="#">Az alapítványról</a>
                 <a href="#">Munkatársaink</a>
-                <a href="#">Eddigi eredményeik</a>
             </div>
         </div>
         <div class="dropdown">
@@ -33,13 +33,6 @@
                 </div>
                 <div class="dropdown-submenu-trigger">
                     <a href="#">Önsegítő csoportok</a>
-                    <!-- <div style="display: flex; padding-right: 16px;">
-                        <i class="submenu-arrow"></i>
-                    </div>
-                    <div class="dropdown-submenu">
-                        <a href="#">Kikkel, miért, hogyan</a>
-                        <a href="#">Jelenlegi önsegítő csoportjaink</a>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -53,6 +46,7 @@
                 <a href="#">Érdeklődés</a>
             </div>
         </div>
+        <a href="" style="padding: 12px; font-weight: 600;">Képzések</a>
         <div class="dropdown">
             <div class="dropbtn">
                 <p>Dokumentumok</p>
@@ -63,6 +57,16 @@
                 <a href="#">Hozzájárulási nyilatkozat</a>
                 <a href="#">Adó 1%-ok felhasználása</a>
                 <a href="#">Közhasznúsági jelentések</a>
+                <div class="dropdown-submenu-trigger">
+                    <a href="#">Olvasmányok</a>
+                    <div style="display: flex; padding-right: 16px;">
+                        <i class="submenu-arrow"></i>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a href="#">Szakanyagok</a>
+                        <a href="#">Személyes tapasztalatok</a>
+                    </div>
+                </div>
             </div>
         </div>
         <a href="" style="padding: 12px; font-weight: 600;">Elérhetőségek</a>
